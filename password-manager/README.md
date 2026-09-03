@@ -6,8 +6,8 @@ A simple desktop password manager built with Python and Tkinter. Generates rando
 
 - Generate a random password (mix of letters, numbers, and symbols)
 - Auto-copies the generated password to your clipboard
-- Save website, email/username, and password entries to a local file
-- Basic confirmation prompt before saving
+- Save website, email/username, and password entries to a local json file
+- Search functionality for existing entries
 
 ## Requirements
 
@@ -35,10 +35,13 @@ python main.py
 4. Click **Generate Password** to auto-fill a random password (also copied to your clipboard), or type your own.
 5. Click **Add** to save the entry.
 
-Saved entries are stored in `password.txt` in the format:
+Saved entries are stored in `file.json` in the format:
 
 ```
-website | email/username | password
+{website:{
+        "email": email_username,
+        "password": password
+    }}
 ```
 
 ## ⚠️ Security note
@@ -54,6 +57,4 @@ This is a learning project, **not a production-safe password manager**. Password
 ## Roadmap / possible improvements
 
 - [ ] Encrypt stored passwords
-- [ ] Use `secrets` module instead of `random` for password generation
-- [ ] Add a search/lookup feature for saved entries
-- [ ] Migrate storage to JSON or a local database
+
